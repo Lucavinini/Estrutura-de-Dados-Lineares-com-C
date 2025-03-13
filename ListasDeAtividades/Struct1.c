@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 /*Implemente um programa para criar o cadastro dos 
 funcionários de uma empresa utilizando um vetor de estruturas. 
 A empresa possui 50 funcionários. O cadastro deverá conter o nome, 
@@ -13,6 +11,7 @@ salário de todos os funcionários que receberam aumento. O programa deverá ter
 dois procedimentos: um para preencher o cadastro de funcionários e outro para dar o 
 aumento aos funcionários e exibir o novo salário deles.*/
 
+#include <stdio.h>
 
  //Criando o esqueleto da estrutura
 
@@ -75,8 +74,6 @@ void PercorrerAumento(Funcionarios *vet){
 }
 
 
-
-
 int main(){
 
     Funcionarios Colaboradores[49];
@@ -87,6 +84,8 @@ int main(){
 
     return 0;
 }
+
+
 
 
 
