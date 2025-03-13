@@ -56,7 +56,7 @@ void PercorrerAumento(Funcionarios *vet){
 
     int i;
 
-    for(i = 0; i < 2; i++){
+    for(i = 0; i < 49; i++){
 
         if(vet[i].escolaridadeGrau == 3){
             if(vet[i].tempoServico > 5){
@@ -79,7 +79,7 @@ void PercorrerAumento(Funcionarios *vet){
 
 int main(){
 
-    Funcionarios Colaboradores[2];
+    Funcionarios Colaboradores[49];
 
     PreencherFuncionarios(Colaboradores);
     printf("\n");
