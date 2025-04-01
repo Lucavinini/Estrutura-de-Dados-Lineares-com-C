@@ -73,7 +73,6 @@ void PercorrerAumento(Funcionarios *vet){
     }
 }
 
-
 int main(){
 
     Funcionarios Colaboradores[49];
@@ -84,9 +83,3 @@ int main(){
 
     return 0;
 }
-
-
-
-
-
- 
