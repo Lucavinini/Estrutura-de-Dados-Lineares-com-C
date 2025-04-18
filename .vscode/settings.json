@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "LSE.C": "cpp"
+        "LSE.C": "cpp",
+        "AtividadePonteiro.C": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
