@@ -106,3 +106,22 @@ void RemoverNoFinal(Lista **ptr){
         }
     }
 }
+
+int ContarElementos(Lista *ptr){
+
+    int contador = 0;
+    Lista *aux;
+
+    if(*ptr == NULL){
+        return contador;
+    }
+    
+    else{
+        aux = *ptr;
+        while(aux != NULL){
+            contador++;
+            aux = aux->prox;
+        }
+        return contador;
+    }
+}
