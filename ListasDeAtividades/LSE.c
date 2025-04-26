@@ -145,3 +145,33 @@ int ContarValor(Lista *ptr, int value){
     }
 }
 
+void Desalocar(Lista **ptr){
+    if(*ptr == NULL){
+        return;
+    }
+    else{
+        Lista *aux;
+        aux = *ptr;
+        Lista *aux2;
+        aux2 = *ptr;
+        while(aux != NULL){
+            *ptr = aux2->prox;
+            free(aux);
+            aux = *ptr;
+            aux2 = *ptr;
+        }
+    }
+}
+
+void ExibirOp(){
+    printf("--------------");
+    printf("1. Inserir no inicio\n");
+    printf("2. Exibir lista\n");
+    printf("3. Remover no inicio\n");
+    printf("4. Inserir no final\n");
+    printf("5. Remover no final\n");
+    printf("6. Contagem de elementos da lista\n");
+    printf("7. Contar valor especifico\n");
+    printf("8. Sair");
+    printf("--------------");
+}
