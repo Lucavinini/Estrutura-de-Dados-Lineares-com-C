@@ -125,3 +125,23 @@ int ContarElementos(Lista *ptr){
         return contador;
     }
 }
+
+int ContarValor(Lista *ptr, int value){
+
+    int cont = 0;
+    if(*ptr == NULL){
+        return cont;
+    }
+    else{
+        Lista *aux;
+        aux = *ptr;
+        while(aux != NULL){
+            if(aux->info == value){
+                cont++;
+            }
+            aux = aux->prox;
+        }
+        return cont;
+    }
+}
+
