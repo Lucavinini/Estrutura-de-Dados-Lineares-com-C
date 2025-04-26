@@ -9,7 +9,7 @@ typedef struct lista{
 
 void InserirNoInicio(Lista **ptr, int valor){
     Lista *NovoNo;
-    Lista = (Lista*)malloc(sizeof(Lista));
+    Lista *ptr = (Lista*)malloc(sizeof(Lista));
     NovoNo->info = valor;
     NovoNo->prox = NULL;
 
@@ -26,14 +26,14 @@ void ExibirValores(Lista *ptr){
 
     Lista *aux;
 
-    if(*ptr == NULL){
+    if(ptr == NULL){
         printf("Lista vazia.\n");
     }
     else{
         aux = ptr;
         while(aux != NULL){
             printf("%d", aux->info);
-            aux->prox;
+            aux = aux->prox;
         }
     }
 }
@@ -82,7 +82,7 @@ void RemoverNoFinal(Lista **ptr){
         printf("Não há elementos na lista.\n");
     }
     else{
-        if(*ptr->prox == NULL){
+        if(ptr->prox == NULL){
             free(*ptr);
             *ptr = NULL;
             printf("A lista só tinha 1 elemento, e ele foi removido.\n");
@@ -112,12 +112,12 @@ int ContarElementos(Lista *ptr){
     int contador = 0;
     Lista *aux;
 
-    if(*ptr == NULL){
+    if(ptr == NULL){
         return contador;
     }
     
     else{
-        aux = *ptr;
+        aux = ptr;
         while(aux != NULL){
             contador++;
             aux = aux->prox;
@@ -129,12 +129,12 @@ int ContarElementos(Lista *ptr){
 int ContarValor(Lista *ptr, int value){
 
     int cont = 0;
-    if(*ptr == NULL){
+    if(ptr == NULL){
         return cont;
     }
     else{
         Lista *aux;
-        aux = *ptr;
+        aux = ptr;
         while(aux != NULL){
             if(aux->info == value){
                 cont++;
@@ -174,4 +174,43 @@ void ExibirOp(){
     printf("7. Contar valor especifico\n");
     printf("8. Sair");
     printf("--------------");
+}
+
+int main(){
+
+    Lista *MinhaLista = NULL;
+    int op, num, result;
+    do {
+        ExibirOp();
+        scanf ("%d",&op);
+        switch(op) {
+            case 1: printf ("Informe o valor: ");
+                    scanf ("%d",&num);
+                    InserirNoFinal(&MinhaLista,num);
+                    break;
+            case 2: printf ("Informe o valor: ");
+                    scanf ("%d",&num);
+                    InserirNoFinal(&MinhaLista,num);
+                    break;
+            case 3: RemoverNoInicio(&MinhaLista);
+                    break;
+            case 4: RemoverNoFinal(&MinhaLista);
+                    break;
+            case 5: ExibirValores(MinhaLista);
+                    break;
+            case 6: result = ContarElementos(MinhaLista);
+                    printf ("A lista possui %d elementos \n", result);
+                    break;
+            case 7: printf ("Informe o valor: ");
+                    scanf ("%d",&num);
+                    result = ContarValor(MinhaLista, num);
+                    printf ("O elemento %d aparece %d vez(es) na lista \n", num, result);
+                    break;
+            case 8: printf ("Bye bye \n");
+                    Desalocar(&MinhaLista);
+                    break;
+            default: printf ("Opcao invalida \n");
+        }
+    } while (op != 0);
+
 }
