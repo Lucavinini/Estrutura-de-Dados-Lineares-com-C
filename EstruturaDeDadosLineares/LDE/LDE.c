@@ -102,3 +102,21 @@ void InserirNoFinal(Descritor **mydesc, int valor){
 		
 	}	
 }
+
+
+
+void RemoverNoFinal(Descritor **mydesc){
+
+	//Lista vazia
+
+	if(mydesc->qtd == 0){
+		return;
+
+	}else{
+		No *aux;
+		aux = mydesc->fim;
+		mydesc->fim = mydesc->fim->anterior;
+		free(aux);
+		mydesc->qtd--;
+	}
+}
