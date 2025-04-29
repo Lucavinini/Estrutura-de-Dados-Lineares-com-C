@@ -18,7 +18,7 @@ typedef struct desc{
 }Descritor;
 
 void Inicializar(Descritor **mydesc){
-	
+	// vou alocar o descritor no MAIN
 	if(mydesc->qtd == 0){
 		mydesc->inicio = NULL;
 		mydesc->prox = NULL;
