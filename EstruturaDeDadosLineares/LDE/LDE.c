@@ -31,7 +31,7 @@ void Inicializar(Descritor **mydesc){
 
 void InserirNoInicio(Descritor **mydesc, int valor){
 	
-	Inicializar();
+	Inicializar(&mydesc);
 	
 	//Descritor vazio
 	if(mydesc->qtd == 0){
