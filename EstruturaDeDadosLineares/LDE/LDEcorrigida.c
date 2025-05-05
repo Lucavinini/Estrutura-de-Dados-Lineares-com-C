@@ -82,6 +82,7 @@ void Iniciar(){
 
 
 
+
 int main(){
 
     Iniciar(); //A função "Iniciar()" Cria a lista, aloca a lista, cria o 

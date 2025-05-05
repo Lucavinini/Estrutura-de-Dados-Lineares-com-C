@@ -18,7 +18,7 @@ typedef struct desc{
 }Descritor;
 
 void Inicializar(Descritor **mydesc){
-	
+	// vou alocar o descritor no MAIN
 	if(mydesc->qtd == 0){
 		mydesc->inicio = NULL;
 		mydesc->prox = NULL;
@@ -31,7 +31,7 @@ void Inicializar(Descritor **mydesc){
 
 void InserirNoInicio(Descritor **mydesc, int valor){
 	
-	Inicializar();
+	Inicializar(&mydesc);
 	
 	//Descritor vazio
 	if(mydesc->qtd == 0){
@@ -101,4 +101,22 @@ void InserirNoFinal(Descritor **mydesc, int valor){
 		mydesc->qtd++;
 		
 	}	
+}
+
+
+
+void RemoverNoFinal(Descritor **mydesc){
+
+	//Lista vazia
+
+	if(mydesc->qtd == 0){
+		return;
+
+	}else{
+		No *aux;
+		aux = mydesc->fim;
+		mydesc->fim = mydesc->fim->anterior;
+		free(aux);
+		mydesc->qtd--;
+	}
 }
