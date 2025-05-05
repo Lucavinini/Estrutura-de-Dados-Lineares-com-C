@@ -26,7 +26,17 @@ typedef struct no{
 void InserirNoInicio(Descritor **mydesc, int valor){
 
     if(mydesc->qtd == 0){  //Lista sem nó?
+        
+        No *NovoNo;
+        NovoNo=(No*)malloc(sizeof(No));
 
+        NovoNo->info = valor;
+        NovoNo->anterior = NULL;
+        NovoNo->prox = NULL;
+
+        mydesc->inicio =*NovoNo;
+        mydesc->fim =*NovoNo;
+        mydesc->qtd++;
     }
     else{
         
