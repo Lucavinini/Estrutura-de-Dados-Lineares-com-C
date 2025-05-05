@@ -4,7 +4,7 @@
 typedef struct desc{
 
     struct desc *inicio;
-    struct desc qtd;
+    int qtd;
     struct desc *fim;
 
 }Descritor;
@@ -20,7 +20,21 @@ typedef struct no{
 //Iniciar no inicio;
 
 
+
 //Iniciar no final
+
+void InserirNoInicio(Descritor **mydesc, int valor){
+
+    if(mydesc->qtd == 0){  //Lista sem nó?
+
+    }
+    else{
+        
+    }
+
+    //Lista com nó?
+
+}
 
 
 //Exibir os elementos da lista
@@ -36,21 +50,32 @@ typedef struct no{
 
 
 
-void iniciar(Descritor **Lista){
+void Iniciar(){
 
-    if (*Lista == NULL) {
+        //Criando a lista e alocando a mesma;
+        Descritor *Lista = NULL;
         Lista=(Descritor*)malloc(sizeof(Descritor));
-    }
-    else{
-        return;
-    }
+    
+        //Criando o descritor e alocando o mesmo
+        Descritor *mydesc;
+        mydesc=(Descritor*)malloc(sizeof(Descritor));
+
+        //Inicializado o descritor
+        mydesc->qtd = 0;
+        mydesc->fim = NULL;
+        mydesc->inicio = NULL;
+
+        //Conectando a lista com o descritor
+        *Lista = mydesc;
 }
+
 
 
 
 int main(){
 
-    Descritor *Lista = NULL;
+    Iniciar(); //A função "Iniciar()" Cria a lista, aloca a lista, cria o 
+                //Descritor, aloca o descritor.
 
-    return 0;
+  
 }
