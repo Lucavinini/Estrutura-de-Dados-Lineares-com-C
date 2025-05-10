@@ -8,7 +8,7 @@ typedef struct lista {
 
 void InserirNoInicio(Lista **ptr, int valor) {
     Lista *NovoNo;
-    NovoNo = (Lista*)malloc(sizeof(Lista)); // Corrigido: estava criando outro ponteiro 'ptr' errado
+    NovoNo = (Lista*)malloc(sizeof(Lista));
     if (NovoNo == NULL) {
         printf("Erro ao alocar memória.\n");
         return;
@@ -26,7 +26,7 @@ void ExibirValores(Lista *ptr) {
     } else {
         aux = ptr;
         while (aux != NULL) {
-            printf("%d ", aux->info); // Melhor espaçar os números
+            printf("%d ", aux->info);
             aux = aux->prox;
         }
         printf("\n");
@@ -75,7 +75,7 @@ void RemoverNoFinal(Lista **ptr) {
     if (*ptr == NULL) {
         printf("Não há elementos na lista.\n");
     } else {
-        if ((*ptr)->prox == NULL) { // Corrigido: era (*ptr)->prox, não ptr->prox
+        if ((*ptr)->prox == NULL) { 
             free(*ptr);
             *ptr = NULL;
             printf("A lista só tinha 1 elemento, e ele foi removido.\n");
