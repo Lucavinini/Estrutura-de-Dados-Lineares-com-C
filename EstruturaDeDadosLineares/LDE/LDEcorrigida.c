@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define TRUE 1
+#define FALSE 0
+
 typedef struct no{
 
     struct no *ant;
@@ -27,7 +30,15 @@ void Inicializar(Descritor **Lista){
 
 }
 
+int IsEmpty(Descritor *Lista){
 
+    if(Lista->qtd == 0){
+        return TRUE;
+    }
+    else{
+        return FALSE;
+    }
+}
 
 
 //Iniciar no inicio;
