@@ -121,8 +121,116 @@ void ExibirLista(Descritor *Lista){
 
 
 //Remover no inicio;
+void RemoverNoInicio(Descritor **Lista){
+
+    No *aux;
+    aux = (*Lista)->inicio;
+
+    if(IsEmpty(*Lista) == TRUE){
+        printf("Não há elementos a serem removidos\n");
+        return;
+    }
+    else{
+
+        (*Lista)->inicio = (*Lista)->inicio->prox;
+
+        if((*Lista)->inicio != NULL){
+
+        (*Lista)->inicio->ant = NULL;
+
+        }
+        else{
+            (*Lista)->fim = NULL;
+        }
+        (*Lista)->qtd--;
+        free(aux);
+    }
+}
+
+//Remover no Meio
+
+void RemoverNoMeio(Descritor **Lista){
+
+    No *aux;
+    aux = (*Lista)->inicio->prox;
+
+    //verificar se a lista tem pelo menos 3 nós. Se tiver faz a remoção, se não, não faz.
+
+    if((*Lista)->qtd >= 3){
+
+        (*Lista)->inicio->prox->prox->ant= (*Lista)->inicio;
+        (*Lista)->inicio->prox = (*Lista)->inicio->prox->prox;
+
+        (*Lista)->qtd--;
+        free(aux);
+
+    }
+    else{
+        printf("Não existe elementos no meio para remover \n");
+    }
+}
+
 //Remover no final
+
+void RemoverNoFinal(Descritor **Lista){
+
+    No *aux, *aux2;
+
+    aux = (*Lista)->fim;
+    aux2 = (*Lista)->fim;
+
+    if((*Lista)->qtd <= 1){
+
+        (*Lista)->inicio = NULL;
+        (*Lista)->fim = NULL;
+        (*Lista)->qtd--;
+        free(aux);
+
+    }
+    else{
+        aux2 = aux->ant;
+        aux2->prox = NULL;
+        (*Lista)->fim = aux2;
+        (*Lista)->qtd--;
+        free(aux);
+    }
+}
+
+//a)Valor a ser procurado
+
+No *Especifico(Descritor *Lista, int value){
+
+    No *aux;
+    aux = (*Lista)->inicio;
+
+    while(aux != NULL){
+        if(aux->info == value){
+            return aux;
+        }
+        aux = aux->prox;
+    }
+    return NULL;
+}
+
+
+
 //Remover todos os valores específicos de uma lista
+
+void RemoverEspecificos(Descritor **Lista, int value){
+
+    No *aux;
+    aux = (*Lista)->inicio;
+
+    while(aux != NULL){
+        if(aux->info == value){
+
+        }
+
+    }
+
+    
+}
+
 //Esvaziar a lista
 
 
