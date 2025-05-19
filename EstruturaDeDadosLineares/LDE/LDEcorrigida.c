@@ -254,6 +254,30 @@ void RemoverEspecificos(Descritor **Lista, int value) {
 
 //Esvaziar a lista
 
+void EsvaziarLista(Descritor **Lista){
+
+    No *aux;
+    aux = (*Lista)->inicio;
+
+    if(IsEmpty(*Lista) == TRUE){
+        printf("A lista já está vazia\n");
+        return;
+    }
+
+    while(aux != NULL){
+        (*Lista)->inicio = aux->prox;
+        free(aux);
+        (*Lista)->qtd--;
+        aux = (*Lista)->inicio;
+    }
+
+    (*Lista)->inicio = NULL;
+    (*Lista)->fim = NULL;
+    (*Lista)->qtd = 0
+
+    printf("Lista vazia\n");
+}
+
 
 int main(){
 
