@@ -216,25 +216,43 @@ No *Especifico(Descritor *Lista, int value){
 
 //Remover todos os valores específicos de uma lista
 
-void RemoverEspecificos(Descritor **Lista, int value){
-
-    No *aux;
-    aux = (*Lista)->inicio;
-
-    while(aux != NULL){
-        if(aux->info == value){
-
-        }
-
+void RemoverEspecificos(Descritor **Lista, int value) {
+    if (IsEmpty(*Lista)) {
+        printf("Lista vazia\n");
+        return;
     }
 
-    
+    No *aux = (*Lista)->inicio;
+    No *anterior = NULL;
+    int contador = 0;
+
+    while (aux != NULL) {
+        if (aux->info == value) {
+            No *temp = aux;
+
+            if (anterior == NULL) {
+                // Remover o primeiro nó
+                (*Lista)->inicio = aux->prox;
+                aux = (*Lista)->inicio;
+            } else {
+                anterior->prox = aux->prox;
+                aux = aux->prox;
+            }
+
+            free(temp);
+            contador++;
+            (*Lista)->qtd--;
+        } else {
+            anterior = aux;
+            aux = aux->prox;
+        }
+    }
+
+    printf("Foram removidos %d elemento(s) com o valor %d.\n", contador, value);
 }
 
+
 //Esvaziar a lista
-
-
-
 
 
 int main(){
