@@ -281,7 +281,8 @@ void EsvaziarLista(Descritor **Lista){
 
 int main(){
 
-    Inicializar();
+    Descritor *Lista;
+    Inicializar(&Lista);
 
   
 }
