@@ -191,5 +191,3 @@ void RemoverEspecifico(Descritor **Lista, int value){
     }
 
 }
-
-//Desalocar os nos
