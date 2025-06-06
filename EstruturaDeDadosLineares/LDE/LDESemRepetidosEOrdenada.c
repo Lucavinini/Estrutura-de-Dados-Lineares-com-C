@@ -36,6 +36,7 @@ void IsEmpty(Descritor **Lista){
     }
 }
 
+// Feito ! Item A)
 No *RetornarEndereco(Descritor **Lista, int value){
 
     if(IsEmpty(*Lista) == TRUE){
@@ -43,7 +44,7 @@ No *RetornarEndereco(Descritor **Lista, int value){
     }
 
     No *aux;
-    Aux = (*Lista)->inicio;
+    aux = (*Lista)->inicio;
 
     while(aux != NULL){
         if(aux->info == value){
@@ -53,4 +54,52 @@ No *RetornarEndereco(Descritor **Lista, int value){
     }
     
     return NULL;
+}
+
+//Função criada para verificar se há algum valor igual.
+int VerificarValor(Descritor **Lista, int value){
+
+    No *aux;
+    aux = (*Lista)->inicio;
+
+    while(aux != NULL){
+        if(aux->info == value){
+            return 1;
+        }
+       aux = aux->prox;
+    }
+    
+    return 0;
+}
+
+void InserirOrdenadoNaoRepetido(Descritor **Lista, int value){
+
+    if(IsEmpty(*Lista) == TRUE){
+
+        No *NovoNo;
+        NovoNo=(No*)malloc(sizeof(No));
+        NovoNo->info = value;
+        NovoNo->ant = NULL;
+        NovoNo->prox = NULL;
+
+        (*Lista)->inicio = NovoNo;
+        (*Lista)->fim = NovoNo;
+        (*Lista)->qtd++;
+
+    }
+    else{
+
+        if(VerificarValor(Lista, value) == 1){
+            printf("Valor repetido");
+            return;
+        }
+
+        
+
+    }
+
+
+
+
+
 }

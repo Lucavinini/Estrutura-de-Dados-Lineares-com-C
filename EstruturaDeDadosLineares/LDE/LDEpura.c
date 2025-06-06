@@ -217,6 +217,7 @@ No *Especifico(Descritor *Lista, int value){
 //Remover todos os valores específicos de uma lista
 
 void RemoverEspecificos(Descritor **Lista, int value) {
+
     if (IsEmpty(*Lista)) {
         printf("Lista vazia\n");
         return;
@@ -227,9 +228,12 @@ void RemoverEspecificos(Descritor **Lista, int value) {
     int contador = 0;
 
     while (aux != NULL) {
-        if (aux->info == value) {
+        if (aux->info == value) { //Acha o valor
             No *temp = aux;
 
+            //Entende a posição do valor
+
+            //primeiro no
             if (anterior == NULL) {
                 // Remover o primeiro nó
                 (*Lista)->inicio = aux->prox;
@@ -282,7 +286,7 @@ void EsvaziarLista(Descritor **Lista){
 int main(){
 
     Descritor *Lista;
-    Inicializar(&Lista);
+    Inicializar(Lista);
 
   
 }

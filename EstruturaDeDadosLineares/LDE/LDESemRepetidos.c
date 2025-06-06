@@ -161,13 +161,8 @@ void ExibirElemetos(Descritor **Lista){
 
 void RemoverEspecifico(Descritor **Lista, int value){
 
-    if(RetornarEndereco(*Lista, value) == 0){
-        printf("Lista vazia\n");
-        return;
-    }
-
     if(RetornarEndereco(*Lista, value) == NULL){
-        printf("Valor não existe na lista\n");
+        printf("Valor não existe na lista ou lista vazia\n");
         return;
     }
 
